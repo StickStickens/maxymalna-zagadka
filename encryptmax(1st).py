@@ -23,13 +23,13 @@ def encrypt(msg : str) -> str: # accepts text in polish without any punctuation 
 def decrypt(enc_msg: str) -> str:
     msg = enc_msg[0]
     prev_l = enc_msg[0]
-    split_msg = ?
+    split_msg = enc_msg.split()
     split_msg[0] = split_msg[0][1:]
     for word in ?:
-        for l in ?:
+        for l in word:
             dec_l = (ord(?) - 97 - ord(prev_l))%26 
-            prev_l = ?
-            while ? < 97:
+            prev_l = l
+            while dec_l < 97:
                 dec_l += ?
             
             msg += chr(dec_l)
