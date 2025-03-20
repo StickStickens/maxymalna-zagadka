@@ -1,5 +1,6 @@
 pol_letters_dict = { 'ą' : 'a', 'ć' : 'c', 'ę' : 'e', 'ź': 'z', 'ż' : 'z', 'ó' : 'o', 'ł' : 'l', 'ń' : 'n', 'ś' : 's'}
 
+
 def encrypt(msg : str) -> str: # accepts text in polish without any punctuation marks
     msg = msg.lower()
     for key, val in pol_letters_dict.items():
@@ -18,9 +19,25 @@ def encrypt(msg : str) -> str: # accepts text in polish without any punctuation 
         enc_msg += ' '
     return enc_msg
 
-def decrypt(enc_msg : str) -> str:
-    # chyba by się przydała ta funkcja...
-    ...
+#coś tu nie działa, przydałoby się naprawić znaki zapytania
+def decrypt(enc_msg: str) -> str:
+    msg = enc_msg[0]
+    prev_l = enc_msg[0]
+    split_msg = ?
+    split_msg[0] = split_msg[0][1:]
+    for word in ?:
+        for l in ?:
+            dec_l = (ord(?) - 97 - ord(prev_l))%26 
+            prev_l = ?
+            while ? < 97:
+                dec_l += ?
+            
+            msg += chr(dec_l)
+        
+        msg += ?
+
+    return msg[:-1]
+    
 
 #testing
 enc_msg = 'ztjhgamic qbl hekoke '
